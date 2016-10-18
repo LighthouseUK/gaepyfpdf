@@ -7,7 +7,7 @@ from __future__ import with_statement
 #PyFPDF-cover-test:hash=3996992652a230c26ffe8b5b7525aeb3
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import sys
 

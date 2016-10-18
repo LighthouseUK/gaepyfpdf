@@ -12,7 +12,7 @@ __license__ = "LGPL 3.0"
 #PyFPDF-cover-test:res=invoice.csv
 
 import common
-from fpdf import Template
+from gaefpdf import Template
 
 import os
 

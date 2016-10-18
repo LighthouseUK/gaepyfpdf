@@ -1,4 +1,4 @@
-from FPDF.Bookmark import *
+from gaefpdf.Bookmark import *
 
 pdf = Bookmark()
 pdf.Open()

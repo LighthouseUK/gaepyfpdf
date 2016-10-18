@@ -1,6 +1,6 @@
 from __future__ import with_statement
 
-from fpdf import *
+from gaefpdf import *
 
 class PDF(FPDF):
     # Load data

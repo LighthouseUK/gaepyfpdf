@@ -1,4 +1,4 @@
-from FPDF.Gradients import *
+from gaefpdf.Gradients import *
 
 pdf = Gradients()
 
@@ -31,7 +31,7 @@ pdf.RadialGradient(110, 25, 80, 80, white, black, coords)
 # paint a coons patch mesh with default coordinates
 pdf.CoonsPatchMesh(20, 115, 80, 80, yellow, blue, green, red)
 
-# set the coordinates for the cubic Bézier points x1,y1 ... x12, y12 of the patch (see coons_patch_mesh_coords.jpg)
+# set the coordinates for the cubic Bï¿½zier points x1,y1 ... x12, y12 of the patch (see coons_patch_mesh_coords.jpg)
 coords=[0.00, 0.00, 0.33, 0.20,            #lower left
         0.67, 0.00, 1.00,0.00, 0.80,0.33,  #lower right
         0.80, 0.67, 1.00,1.00, 0.67,0.80,  #upper right

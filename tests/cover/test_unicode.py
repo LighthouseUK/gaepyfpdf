@@ -11,7 +11,7 @@ from __future__ import with_statement
 #PyFPDF-cover-test:res=HelloWorld.txt
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import os
 

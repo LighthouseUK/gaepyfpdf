@@ -8,7 +8,7 @@
 #PyFPDF-cover-test:res=font/DejaVuSans.ttf
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import sys, traceback, os
 

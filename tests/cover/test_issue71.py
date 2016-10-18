@@ -9,7 +9,7 @@
 # PyFPDF-cover-test:res=.png
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import os
 

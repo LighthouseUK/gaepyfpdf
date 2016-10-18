@@ -13,15 +13,15 @@ from __future__ import with_statement
 # This test can't calc hash because TTF fonts can vary on systems
 
 import common
-import fpdf
+import gaefpdf
 
 import os, time
 
 @common.add_unittest
 def dotest(outputname, nostamp):
-    fpdf.set_global('SYSTEM_TTFONTS', "c:\\WINDOWS\\Fonts")
+    gaefpdf.set_global('SYSTEM_TTFONTS', "c:\\WINDOWS\\Fonts")
 
-    pdf = fpdf.FPDF()
+    pdf = gaefpdf.FPDF()
     if nostamp:
         pdf._putinfo = lambda: common.test_putinfo(pdf)
 

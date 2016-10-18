@@ -10,7 +10,7 @@
 # *                                                                            *
 # * Ported to Python 2.6 by jredrejo (jredrejo@debian.org)   September-2011    *
 # *****************************************************************************/
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 #List of label formats:
 commercial_labels={

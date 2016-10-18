@@ -12,7 +12,7 @@
 # 
 
 import common # test utilities
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import sys
 import os, os.path

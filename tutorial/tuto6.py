@@ -1,4 +1,4 @@
-from fpdf import *
+from gaefpdf import *
 import re
 
 class PDF(FPDF):

@@ -1,4 +1,4 @@
-from fpdf import *
+from gaefpdf import *
 
 pdf = FPDF()
 pdf.add_font('Calligrapher', '', 'calligra')

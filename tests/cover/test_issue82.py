@@ -6,7 +6,7 @@
 #PyFPDF-cover-test:res=HelloWorld.txt
 
 import common
-import fpdf
+import gaefpdf
 
 import os, shutil, time
 
@@ -15,8 +15,8 @@ def check_width(req, new):
 
 @common.add_unittest
 def dotest(outputname, nostamp):
-    fpdf.set_global("FPDF_CACHE_MODE", 1)
-    pdf = fpdf.FPDF()
+    gaefpdf.set_global("FPDF_CACHE_MODE", 1)
+    pdf = gaefpdf.FPDF()
     pdf.add_font('DejaVu', '', \
         os.path.join(common.basepath, "font", 'DejaVuSansCondensed.ttf'), \
         uni = True)

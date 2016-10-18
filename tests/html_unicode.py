@@ -8,7 +8,7 @@ __license__ = "LGPL 3.0"
 
 # Inspired by tuto5.py and several examples from fpdf.org, html2fpdf, etc.
 
-from fpdf import FPDF, HTMLMixin
+from gaefpdf import FPDF, HTMLMixin
 
 import os.path
 

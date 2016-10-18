@@ -8,7 +8,7 @@
 #PyFPDF-cover-test:res=../tutorial/logo_pb.png
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import os
 

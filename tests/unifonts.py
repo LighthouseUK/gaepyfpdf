@@ -2,8 +2,8 @@
 
 from __future__ import with_statement
 
-from fpdf import FPDF
-import fpdf
+from gaefpdf import FPDF
+import gaefpdf
 import sys
 import os
 import time

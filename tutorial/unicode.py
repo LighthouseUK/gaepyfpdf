@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-from fpdf import FPDF
+from gaefpdf import FPDF
 import sys
 
 fn = 'unicode.pdf'

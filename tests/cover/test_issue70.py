@@ -3,7 +3,7 @@
 "Basic test to check issue 70: raise an exception if add_page was not called"
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import os, struct
 

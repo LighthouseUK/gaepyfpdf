@@ -9,7 +9,7 @@ from __future__ import with_statement
 #PyFPDF-cover-test:hash=c576afec3362a7cc3b4b07a12feeefd3
 
 import common # common set of utilities
-import fpdf
+import gaefpdf
 
 import sys
 
@@ -21,7 +21,7 @@ def dotest(outputname, nostamp):
         "\\ ( ) abcdef..xyz 01234\n" +\
         "| [ ] ABCDEF..XYZ 56789\n"
          
-    pdf = fpdf.FPDF()
+    pdf = gaefpdf.FPDF()
     with open(outputname, "wb") as f:
         f.write(pdf._escape(txt).encode("latin1"))
 

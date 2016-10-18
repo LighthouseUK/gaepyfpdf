@@ -8,7 +8,7 @@
 #PyFPDF-cover-test:python2=no
 
 import common # test utilities
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import sys
 

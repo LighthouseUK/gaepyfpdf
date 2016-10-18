@@ -5,7 +5,7 @@
 from __future__ import with_statement
 
 import common # common set of utilities
-import fpdf.fonts
+import gaefpdf.fonts
 
 #PyFPDF-cover-test:res=adobe-agl/glyphlist.txt
 #PyFPDF-cover-test:res=adobe-agl/zapfdingbats.txt
@@ -170,7 +170,7 @@ def conv1252(names):
 
 @common.add_unittest
 def dotest(outputname, nostamp):
-    cw = fpdf.fonts.fpdf_charwidths
+    cw = gaefpdf.fonts.fpdf_charwidths
     fonts = list(cw.keys())
     fonts.sort()
     names = readglyphlist(os.path.join(common.basepath, 

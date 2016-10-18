@@ -9,8 +9,8 @@
 #PyFPDF-cover-test:res=HelloWorld.txt
 
 import common
-import fpdf
-from fpdf import FPDF
+import gaefpdf
+from gaefpdf import FPDF
 
 import os
 
@@ -43,7 +43,7 @@ def text(pdf, txt, stretching, nostamp):
 
 @common.add_unittest
 def dotest(outputname, nostamp):
-    fpdf.set_global("FPDF_CACHE_MODE", 1)
+    gaefpdf.set_global("FPDF_CACHE_MODE", 1)
     pdf = FPDF()
     if nostamp:
         pdf._putinfo = lambda: common.test_putinfo(pdf)

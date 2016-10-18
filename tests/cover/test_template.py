@@ -25,7 +25,7 @@
 #...
 
 import common # common set of utilities
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import sys
 

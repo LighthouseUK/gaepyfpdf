@@ -8,7 +8,7 @@ from __future__ import with_statement
 #PyFPDF-cover-test:res=dejavusanscondensed.cw.dat
 
 import common
-from fpdf.ttfonts import TTFontFile
+from gaefpdf.ttfonts import TTFontFile
 
 import os, struct
 

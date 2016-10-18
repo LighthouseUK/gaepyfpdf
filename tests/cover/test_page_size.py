@@ -9,7 +9,7 @@
 import os
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 def page(pdf, text, orientation, format):
     pdf.add_page(orientation = orientation, format = format)

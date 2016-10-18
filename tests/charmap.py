@@ -2,8 +2,8 @@
 
 import os, sys
 
-from fpdf import FPDF, FPDF_VERSION
-from fpdf.ttfonts import TTFontFile
+from gaefpdf import FPDF, FPDF_VERSION
+from gaefpdf.ttfonts import TTFontFile
 
 print (FPDF_VERSION)
 

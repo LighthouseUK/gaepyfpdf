@@ -8,13 +8,13 @@ from __future__ import with_statement
 #PyFPDF-cover-test:res=font/DejaVuSans.ttf
 
 import common
-import fpdf
+import gaefpdf
 
 import os, shutil, time
 
 def testfile(f1, f2):
     # create pdf
-    pdf = fpdf.FPDF()
+    pdf = gaefpdf.FPDF()
     if f1:
         pdf.add_font('DejaVuSansCondensed', '', f1, uni = True)
     if f2:
@@ -67,7 +67,7 @@ def dotest(outputname, nostamp):
     f2 = os.path.join(cachepath, "DejaVuSans.ttf")
 
     # --- normal cache mode ---
-    fpdf.set_global("FPDF_CACHE_MODE", 0)
+    gaefpdf.set_global("FPDF_CACHE_MODE", 0)
     # first load
     t0 = time.time()
     pdf = testfile(f1, f2)
@@ -92,7 +92,7 @@ def dotest(outputname, nostamp):
     assert os.path.exists(f2[:-3] + "cw127.pkl"), "Unnecessary cw127 for DejaVuSans"
         
     # --- disable cache reading ---
-    fpdf.set_global("FPDF_CACHE_MODE", 1)
+    gaefpdf.set_global("FPDF_CACHE_MODE", 1)
     # put garbage data to cache files - fpdf should not read pkl
     trashfile(f1[:-3] + "pkl")
     trashfile(f2[:-3] + "pkl")
@@ -123,8 +123,8 @@ def dotest(outputname, nostamp):
     assert not os.path.exists(f2[:-3] + "cw127.pkl"), "Unnecessary file DejaVuSans.127.pkl"
 
     # --- hash cache ---
-    fpdf.set_global("FPDF_CACHE_MODE", 2)
-    fpdf.set_global("FPDF_CACHE_DIR", hashpath)
+    gaefpdf.set_global("FPDF_CACHE_MODE", 2)
+    gaefpdf.set_global("FPDF_CACHE_DIR", hashpath)
     t0 = time.time()
     pdf = testfile(f1, f2)
     t1 = time.time()

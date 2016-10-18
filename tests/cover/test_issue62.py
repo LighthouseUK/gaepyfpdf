@@ -15,7 +15,7 @@
 import os
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 @common.add_unittest
 def dotest(outputname, nostamp):

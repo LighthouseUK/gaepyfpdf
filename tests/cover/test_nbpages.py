@@ -8,17 +8,17 @@
 #PyFPDF-cover-test:res=font/DejaVuSansCondensed.ttf
 
 import common
-import fpdf
+import gaefpdf
 
 import os
 
 @common.add_unittest
 def dotest(outputname, nostamp):
-    pdf = fpdf.FPDF()
+    pdf = gaefpdf.FPDF()
     if nostamp:
         pdf._putinfo = lambda: common.test_putinfo(pdf)
 
-    fpdf.set_global("FPDF_CACHE_MODE", 1)
+    gaefpdf.set_global("FPDF_CACHE_MODE", 1)
     # set default alias: {nb} that will be replaced with total page count
     pdf.alias_nb_pages()
 

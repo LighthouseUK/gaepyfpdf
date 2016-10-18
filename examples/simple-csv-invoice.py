@@ -3,7 +3,7 @@ from __future__ import with_statement
 
 import sys, os
 sys.path.append("..")
-import fpdf
+import gaefpdf
 
 customer = {'name':'John Doe','tax_id':'00-0000000-0','vat':True}
 items = [
@@ -12,7 +12,7 @@ items = [
     {'qty':1,'description':'Varios','price':0.50},
 ]
 
-pdf = fpdf.FPDF()
+pdf = gaefpdf.FPDF()
 pdf.add_page();
 pdf.set_font('Arial','B',16);
 with open("simple-csv-invoice.txt") as file:

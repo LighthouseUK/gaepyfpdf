@@ -8,7 +8,7 @@ def main():
     common.log("CHECK")
     
     try:
-        from fpdf import FPDF_VERSION
+        from gaefpdf import FPDF_VERSION
     except ImportError:
         FPDF_VERSION = None
     common.log("VER =", FPDF_VERSION)

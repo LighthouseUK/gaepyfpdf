@@ -11,7 +11,7 @@
 #* Thanks: Cpdf (http:#www.ros.co.nz/pdf) was my working sample of how to    *
 #* implement protection in pdf.                                              *
 #****************************************************************************/
-from FPDF import *
+from gaefpdf import *
 import random, struct, md5, copy, array
 
 class Protection(FPDF):

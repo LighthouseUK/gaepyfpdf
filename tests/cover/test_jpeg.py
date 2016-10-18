@@ -12,7 +12,7 @@
 #PyFPDF-cover-test:res=img_cmyk.jpg
 
 import common # test utilities
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 import os.path
 

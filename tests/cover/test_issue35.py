@@ -7,7 +7,7 @@
 #PyFPDF-cover-test:hash=e8f92b3210aea65caa72f70d0f898c04
 
 import common
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 @common.add_unittest
 def dotest(outputname, nostamp):

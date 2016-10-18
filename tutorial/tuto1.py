@@ -1,4 +1,4 @@
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 pdf = FPDF()
 pdf.add_page()

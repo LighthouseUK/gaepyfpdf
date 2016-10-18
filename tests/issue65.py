@@ -1,6 +1,6 @@
 "Test issue 65: twitter.png error (urlopen, transparency, internal regex error)"
 
-from fpdf import FPDF, FPDF_VERSION
+from gaefpdf import FPDF, FPDF_VERSION
 
 pdf=FPDF()
 pdf.compress = False

@@ -1,4 +1,4 @@
-from FPDF import *
+from gaefpdf import *
 
 class Gradients(FPDF):
 	def __init__(this,orientation='P',unit='mm',format='A4'):

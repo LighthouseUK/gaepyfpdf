@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-1 -*-
 
 import os
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 pdf = FPDF()
 pdf.add_page()

@@ -2,7 +2,7 @@
 from __future__ import with_statement
 
 import sys,os
-from fpdf import FPDF
+from gaefpdf import FPDF
 
 class Form:
     def __init__(self, infile):
