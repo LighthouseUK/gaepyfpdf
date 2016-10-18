@@ -64,6 +64,9 @@ class RamDisk(object):
             (e.g. `__getitem__, __setitem__`)
     """
 
+    def __init__(self):
+        self._cache = {}
+
     def _tostring(self, data, expired=None, noc=0, ncalls=0):
         """
         Serialize data to string.
@@ -100,19 +103,19 @@ class RamDisk(object):
 
         return _load_safely_or_none(sdata)
 
-    def store_data(self, chash, data, ttl=0, noc=0, ncalls=0):
+    def store_data(self, cache_key, data, ttl=0, noc=0, ncalls=0):
         if ttl:
             expired = datetime.datetime.now() + datetime.timedelta(seconds=ttl)
         else:
             expired = datetime.datetime.now()
 
-        self[chash] = self._tostring(data, expired=expired, noc=noc, ncalls=ncalls)
+        self._cache[cache_key] = self._tostring(data, expired=expired, noc=noc, ncalls=ncalls)
 
-    def get_data(self, chash, ttl=0, noc=0):
+    def get_data(self, cache_key, ttl=0, noc=0):
         """
         Get data from cache.
 
-        :param chash: a string
+        :param cache_key: a string
         :param ttl: time-to-live in seconds
         :param noc: maximum number of cached data retrieving
         :type ttl: int
@@ -120,16 +123,16 @@ class RamDisk(object):
         :returns: a python object (representing sotred data)
         """
         res = None
-        if chash in self:
-            res = self._fromstring(self[chash])
+        if cache_key in self._cache:
+            res = self._fromstring(self._cache[cache_key])
         if isinstance(res, tuple):
             updated = (res[0], res[1], res[2], res[3]+1)
-            self[chash] = self._tostring(updated[0], expired=updated[1], noc=updated[2], ncalls=updated[3])
+            self._cache[cache_key] = self._tostring(updated[0], expired=updated[1], noc=updated[2], ncalls=updated[3])
             if noc and updated[3] >= noc:
                 res = None
-                del self[chash]
+                del self._cache[cache_key]
             if res is not None:
                 if ttl and datetime.datetime.now() > res[1]:
                     res = None
-                    del self[chash]
+                    del self._cache[cache_key]
         return res[0] if res else None
