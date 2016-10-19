@@ -1,7 +1,8 @@
 """
 This is a stripped down version of cachepy: https://github.com/scidam/cachepy
 
-I have removed the function value caching code and exposed just the methods for storing and fetching data.
+I have removed the function value caching code and exposed just the methods for storing and fetching data. Also removed
+the data encryption code as it is not applicable to this use case.
 
 .. codeauthor:: Dmitry Kislov <kislov@easydan.com>
 .. codeauthor:: Matt Badger <foss@lighthouseuk.net>
@@ -24,35 +25,6 @@ except ImportError:
     import pickle
 
 __all__ = ('Cache', 'memcache')
-
-
-def _validate_key(key):
-    """Returns validated key or None"""
-
-    if not isinstance(key, basestring):
-        return None
-    elif len(key) > 1000:
-        return None
-    else:
-        return key
-
-
-def _load_safely_or_none(sdata):
-    result = None
-    try:
-        result = pickle.loads(base64.b64decode(sdata))
-    except:
-        warnings.warn("Could not load data.", RuntimeWarning)
-    return result
-
-
-def _dump_safely_or_none(data):
-    result = ''
-    try:
-        result = base64.b64encode(pickle.dumps(data))
-    except:
-        warnings.warn("Data could be serialized.", RuntimeWarning)
-    return result
 
 
 class RamDisk(object):
@@ -85,7 +57,11 @@ class RamDisk(object):
         :returns: serialized data
         :rtype: str
         """
-        return _dump_safely_or_none((data, expired, noc, ncalls))
+        try:
+            return base64.b64encode(pickle.dumps((data, expired, noc, ncalls)))
+        except:
+            warnings.warn("Data could be serialized.", RuntimeWarning)
+            return ''
 
     def _fromstring(self, sdata):
         """
@@ -101,7 +77,11 @@ class RamDisk(object):
             warnings.warn("Input data must be a string", RuntimeWarning)
             return
 
-        return _load_safely_or_none(sdata)
+        try:
+            return pickle.loads(base64.b64decode(sdata))
+        except:
+            warnings.warn("Could not load data.", RuntimeWarning)
+            return None
 
     def store_data(self, cache_key, data, ttl=0, noc=0, ncalls=0):
         if ttl:
